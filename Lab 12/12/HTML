@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MiniForum — пространство общения</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="logo">
+      <span class="logo-icon">✳</span>
+      MINI<span class="accent">FORUM</span>
+    </div>
+
+    <div class="header-right">
+      <span class="online-dot"></span>
+      <span id="authState">Гостевой режим</span>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="hero">
+      <div class="hero-text">
+        <span class="eyebrow">ТВОЁ ПРОСТРАНСТВО</span>
+
+        <h1>
+          Мысли.<br>
+          Идеи.<br>
+          <span class="accent">Общение.</span>
+        </h1>
+
+        <p>
+          Место, где можно делиться идеями,
+          общаться и находить единомышленников.
+        </p>
+
+        <div class="hero-tag">
+          ✦ Читай свободно. Пиши после входа.
+        </div>
+      </div>
+
+      <div class="auth-card">
+
+        <div id="guestPanel">
+          <span class="card-label">ЛИЧНЫЙ КАБИНЕТ</span>
+          <h2>С возвращением!</h2>
+          <p class="muted">
+            Войди, чтобы участвовать в обсуждениях.
+          </p>
+
+          <form id="loginForm">
+            <label for="username">Логин</label>
+            <input
+              id="username"
+              type="text"
+              placeholder="Введите логин"
+              autocomplete="username"
+              required
+            >
+
+            <label for="password">Пароль</label>
+            <input
+              id="password"
+              type="password"
+              placeholder="Введите пароль"
+              autocomplete="current-password"
+              required
+            >
+
+            <button type="submit" class="primary-btn">
+              Войти →
+            </button>
+          </form>
+        </div>
+
+        <div id="userPanel" hidden>
+          <span class="card-label">ЛИЧНЫЙ КАБИНЕТ</span>
+          <div class="avatar">✳</div>
+
+          <h2>Добро пожаловать!</h2>
+          <p id="profileName"></p>
+
+          <div class="session-box">
+            <span>Время сессии</span>
+            <strong id="sessionTimer">--:--</strong>
+          </div>
+
+          <button id="logoutButton" class="outline-btn">
+            Выйти из аккаунта
+          </button>
+        </div>
+
+        <p id="loginMessage" class="message" role="status"></p>
+      </div>
+    </section>
+
+    <section class="forum">
+
+      <div class="forum-header">
+        <div>
+          <span class="eyebrow">СООБЩЕСТВО</span>
+          <h2>Лента обсуждений<span class="accent">.</span></h2>
+          <p class="muted">
+            Делись мыслями и читай сообщения других.
+          </p>
+        </div>
+
+        <button id="refreshButton" class="refresh-btn">
+          ↻ Обновить
+        </button>
+      </div>
+
+      <div id="composer" class="composer" hidden>
+        <h3>✳ Новая публикация</h3>
+
+        <form id="postForm">
+          <textarea
+            id="postText"
+            placeholder="О чём думаешь сегодня?"
+            maxlength="500"
+            required
+          ></textarea>
+
+          <div class="composer-bottom">
+            <span id="charCounter">0 / 500</span>
+
+            <button type="submit" class="primary-btn">
+              Опубликовать →
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div id="guestNotice" class="guest-notice">
+        <span>🔒</span>
+        Войди в аккаунт, чтобы публиковать сообщения.
+      </div>
+
+      <div id="postsList" class="posts-list">
+        <p class="muted">Загрузка сообщений...</p>
+      </div>
+
+      <p id="forumMessage" class="message" role="status"></p>
+
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <span>✳ MINIFORUM</span>
+    <span>Лабораторная работа №12</span>
+  </footer>
+
+</body>
+</html>
